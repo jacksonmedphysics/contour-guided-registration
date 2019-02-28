@@ -27,10 +27,10 @@ input_dir='input'
 temp_dir='temp'
 
 clear_temp=False
-convert_dicom=False #True
-resample=False #True
-convert_rt=False #True
-initial_rigid=False #True
+convert_dicom=True #True  #Checkpoints to more efficiently modifying code
+resample=True #True
+convert_rt=True #True
+initial_rigid=True #True
 wide_ct_expansion=40
 pet_expansion=20 #old
 crop_expansion=50 #previously 25
