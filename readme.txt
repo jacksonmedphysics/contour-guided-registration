@@ -15,4 +15,4 @@ CT and PET-guided registration benefit from independently designated dilation ra
 
 The processing routine was developed for pharmacokinetics assessment of a cohort of patients receiving radionuclide therapy. Each patient was contoured with a standardised set of organ contours and variety of tumour contours (denoted by a first character 'x'). This presents an automated means to perform focused rigid registration for each individual contour with greater overall accuracy and precision than typical whole-body deformable algorithms can achieve. Following alignment, the program measures mean activity concentration, by generating 3d animations allows operators to quickly verify the accuracy of each region's alignment across all three timepoints for inclusion in analysis.
 
-![](sample_mips/xRibLtPost.gif)
+![](sampleMIP.gif)
