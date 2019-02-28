@@ -61,8 +61,8 @@
 
 // Automatically guess an initial translation by aligning the
 // geometric centers of the fixed and moving.
-//(AutomaticTransformInitialization "true") //set to false for Adams case
-(AutomaticTransformInitialization "false")
+(AutomaticTransformInitialization "true") 
+//(AutomaticTransformInitialization "false")
 
 // Whether transforms are combined by composition or by addition.
 // In generally, Compose is the best option in most cases.
