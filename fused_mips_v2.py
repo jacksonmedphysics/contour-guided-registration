@@ -7,10 +7,16 @@ from scipy.ndimage import binary_dilation,binary_erosion,interpolation
 from scipy.misc import imresize
 import subprocess,shutil,os
 import SimpleITK as sitk
-temp_dir='mip_temp'
+
 from os.path import join
 import os,glob  #for clear_dir(directory)
 
+
+temp_dir='mip_temp'
+try:
+    os.mkdir(temp_dir)
+except:
+    zzz=1
 
 si = subprocess.STARTUPINFO()
 si.dwFlags |= subprocess.STARTF_USESHOWWINDOW

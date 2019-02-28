@@ -12,7 +12,7 @@ from fused_mips_v2 import *
 si = subprocess.STARTUPINFO()
 si.dwFlags |= subprocess.STARTF_USESHOWWINDOW
 
-
+##Enter absolute binary paths for local install if not included in %PATH%
 elastix='elastix'
 transformix='transformix'
 plastimatch='plastimatch'
@@ -27,6 +27,8 @@ def new_dir(directory_path):
         #print(directory_path,'exists')
         zzz=1
     return
+
+new_dir(working_dir)
 
 def run_reg(fixed_im,moving_im,params,out_folder,initial_params=False,label_mask=False):
     new_dir(out_folder)

@@ -33,7 +33,7 @@ def get_paths(dir_in):
             ext=path.split('.')[-1]
             if ext.lower()=='dcm' or ext.lower()=='ima':
                 if num%50==0:
-                    print 'Reading file ',num
+                    print('Reading file ',num)
                 dcm=dicom.read_file(os.path.join(directory,name))
                 seriesdescriptions.append(dcm.SeriesDescription)
                 paths.append(os.path.join(directory,name))
