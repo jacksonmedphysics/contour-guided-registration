@@ -180,19 +180,19 @@ def dilated_fine_reg(fixed_im,moving_im,label_path,dilation,initial_params,fine_
     return params_from_file(join(out_dir,'TransformParameters.0.txt')), output
 
 
-fixed_ct='BELLCYRIL\\CT1_15.nrrd'
-moving_ct='BELLCYRIL\\CT2.nrrd'
+fixed_ct='study\\CT1_15.nrrd'
+moving_ct='study\\CT2.nrrd'
 params='param\\rigid_param.txt'
 out_folder='working_dir\\rigid2'
 #run_reg(fixed_ct,moving_ct,params,out_folder)
 
 initial_params='working_dir\\rigid2\\TransformParameters.0.txt'
-fixed_pt='BELLCYRIL\\PT1_15.nrrd'
-moving_pt='BELLCYRIL\\PT2.nrrd'
+fixed_pt='study\\PT1_15.nrrd'
+moving_pt='study\\PT2.nrrd'
 params='param\\rigid_param_focused_fast.txt'
 out_folder='working_dir\\focused2'
-#label='BELLCYRIL\\structs\\xLVert.mha'
-label='BELLCYRIL\\structs\\Parotid_Lt.mha'
+#label='study\\structs\\xLVert.mha'
+label='study\\structs\\Parotid_Lt.mha'
 fine_params='param\\fine_params2.txt'
 #dilation_list=[50,35,20,15,10,7,5,3,2,1]
 
@@ -209,14 +209,14 @@ def print_output_vals(output):
 
 """
 dilation_list=[15]
-for struct in os.listdir('BELLCYRIL\\structs'):
-    label=join('BELLCYRIL\\structs',struct)
+for struct in os.listdir('study\\structs'):
+    label=join('study\\structs',struct)
     multi_res_cropped(fixed_pt,moving_pt,label,dilation_list,initial_params,fine_params,out_dir='working_dir\\fine_multires')
 #multi_res_cropped(fixed_pt,moving_pt,label,dilation_list,initial_params,fine_params,out_dir='working_dir\\fine_multires')
-im1=sitk.ReadImage("E:\\LuPSMA_SingleTimepoint\\BELLCYRIL\\PT1_15.nrrd")
+im1=sitk.ReadImage("E:\\LuPSMA_SingleTimepoint\\study\\PT1_15.nrrd")
 im2=sitk.ReadImage('working_dir\\fine_multires\\result.0.nrrd')
 im3=False
-#label=sitk.ReadImage("E:\\LuPSMA_SingleTimepoint\\BELLCYRIL\\structs\\xLVert.mha")
+#label=sitk.ReadImage("E:\\LuPSMA_SingleTimepoint\\study\\structs\\xLVert.mha")
 label=sitk.ReadImage(join(working_dir,'dilated_label.nrrd'))
 crop_distance=75
 output_path='mip_temp\\test.gif'
